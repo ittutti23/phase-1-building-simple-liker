@@ -1,15 +1,29 @@
 require ( './helpers.js' );
 
-const sinon = require( 'sinon' );
-const helpers = require( './helpers' );
-const chai = require( 'chai' );
-const spies = require( 'chai-spies' );
+describe('Fix the Scope', function() {
+  describe('declare customerName to be bob in global scope', function() {
+    it('returns the customerName', function() {
+      expect(window.customerName).to.equal('bob');
+    });
+  });
 
-chai.use( spies );
+  describe('Fix the Scope', function() {
+    describe('declare customerName to be bob in global scope', function() {
+      it('returns the customerName', function() {
+        expect(window.customerName).to.equal('bob');
+      });
+    });
 
-describe( "main.js", () => {
-  it("contains a hidden modal", () => {
-    let modal = document.querySelector('.hidden')
-    expect(modal).not.to.equal(null)
-  } )
-} )
+    describe('Fix the Scope', function() {
+      describe('declare customerName to be bob in global scope', function() {
+        it('returns the customerName', function() {
+          expect(window.customerName).to.equal('bob');
+        });
+      });
+      
+      describe('Fix the Scope', function() {
+        describe('declare customerName to be bob in global scope', function() {
+          it('returns the customerName', function() {
+            expect(window.customerName).to.equal('bob');
+          });
+        })})})})})
